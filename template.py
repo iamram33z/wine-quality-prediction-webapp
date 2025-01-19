@@ -34,6 +34,7 @@ list_of_files = [
     "notebooks/trial1.ipynb",
     "templates/index.html",
     "tests/test_main.py",
+    "tasks.py",
 
 ]
 
