@@ -19,4 +19,8 @@ black
 isort
 pyarrow
 invoke
+jupyter
+jupyterlab
+ipykernel
+ipython
 -e .
