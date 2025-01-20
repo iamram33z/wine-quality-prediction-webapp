@@ -32,6 +32,7 @@ list_of_files = [
     f"source/{PROJECT_NAME}/constants/__init__.py",
     "config/config.yml",
     "params.yaml",
+    "schema.yaml",
     "main.py",
     "app.py",
     "requirements.txt",
