@@ -7,6 +7,7 @@ from wine_quality_prediction import logger
 
 logger.info("This is the main module of the project.")
 
+
 def add_numbers(a, b):
     """Add two numbers."""
     return a + b

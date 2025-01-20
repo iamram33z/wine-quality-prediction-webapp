@@ -3,16 +3,17 @@ Common Utility Functions for Wine Quality Prediction Project are defined here.
 """
 
 # Importing Required Libraries
-import os
-from box.exceptions import BoxValueError
-from box import ConfigBox
-import yaml
-from wine_quality_prediction import logger
 import json
-import joblib
-from ensure import ensure_annotations
+import os
 from pathlib import Path
-from typing import Any, Dict, List, Tuple
+from typing import Any, Dict
+
+import joblib
+import yaml
+from box import ConfigBox  # type: ignore
+from box.exceptions import BoxValueError
+from ensure import ensure_annotations
+from wine_quality_prediction import logger
 
 
 @ensure_annotations
@@ -28,18 +29,20 @@ def read_yaml(path_to_yaml: Path) -> ConfigBox:
 
     """
     try:
-        with open(path_to_yaml, "r") as yaml_file:
+        with open(path_to_yaml, "r", encoding="utf-8") as yaml_file:
             config = yaml.safe_load(yaml_file)
-            logger.info(f"YAML file loaded successfully from the path: {path_to_yaml}")
+            logger.info("YAML file loaded successfully from the path: %s", path_to_yaml)
         return ConfigBox(config)
-    except FileNotFoundError:
-        logger.error(f"File not found at the specified location: {path_to_yaml}")
-        raise FileNotFoundError("yaml file not found")
-    except BoxValueError:
-        logger.error(f"Error occurred while loading the YAML file from the path: {path_to_yaml}")
-        raise BoxValueError("Error occurred while loading the YAML file")
+    except FileNotFoundError as exc:
+        logger.error("File not found at the specified location: %s", path_to_yaml)
+        raise FileNotFoundError("yaml file not found") from exc
+    except BoxValueError as exc:
+        logger.error(
+            "Error occurred while loading the YAML file from the path: %s", path_to_yaml
+        )
+        raise BoxValueError("Error occurred while loading the YAML file") from exc
     except Exception as e:
-        logger.error(f"Error occurred: {e}")
+        logger.error("Error occurred: %s", e)
         raise e
 
 
@@ -60,29 +63,27 @@ def create_directory(path_to_directories: list, verbose: True):
         if not os.path.exists(directory):
             os.makedirs(directory)
             if verbose:
-                logger.info(f"Directory created at the path: {directory}")
+                logger.info("Directory created at the path: %s", directory)
         else:
             if verbose:
-                logger.info(f"Directory already exists at the path: {directory}")
+                logger.info("Directory already exists at the path: %s", directory)
 
 
 @ensure_annotations
-def save_jason(path: Path, data:dict):
+def save_json(path: Path, data: Dict):
     """
     Save the data in JSON format.
 
     Args:
         path (Path): Path to save the JSON file.
-        data (dict): Data to save in JSON format.
+        data (Dict): Data to save in JSON format.
 
     Returns:
         None
     """
-    with open(path, "w") as json_file:
-        content = json.load(json_file)
-
-    logger.info(f"json file loaded successfully from the path: {path}")
-    return ConfigBox(content)
+    with open(path, "w", encoding="utf-8") as json_file:
+        json.dump(data, json_file)
+    logger.info("JSON file saved successfully at the path: %s", path)
 
 
 @ensure_annotations
@@ -99,7 +100,7 @@ def save_binary(path: Path, data: Any):
     """
     with open(path, "wb") as binary_file:
         joblib.dump(data, binary_file)
-    logger.info(f"Binary file saved successfully at the path: {path}")
+    logger.info("Binary file saved successfully at the path: %s", path)
 
 
 @ensure_annotations
@@ -115,7 +116,7 @@ def load_binary(path: Path) -> Any:
     """
     with open(path, "rb") as binary_file:
         data = joblib.load(binary_file)
-    logger.info(f"Binary file loaded successfully from the path: {path}")
+    logger.info("Binary file loaded successfully from the path: %s", path)
     return data
 
 
@@ -131,7 +132,7 @@ def get_size(p) -> str:
         str: Size of the file.
     """
     size = os.path.getsize(p)
-    for unit in ['bytes', 'KB', 'MB', 'GB', 'TB']:
+    for unit in ["bytes", "KB", "MB", "GB", "TB"]:
         if size < 1024.0:
             return f"{size:.1f} {unit}"
         size /= 1024.0

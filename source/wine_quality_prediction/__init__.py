@@ -1,10 +1,14 @@
+"""
+Application Initialization File with Logging Configuration
+"""
+
 # Import Libraries
+import logging
 import os
 import sys
-import logging
 
 # Define the logging String
-logging_str = "[%(asctime)s - %(name)s - %(levelname)s - %(message)s}"
+LOGGING_STR = "[%(asctime)s - %(name)s - %(levelname)s - %(message)s}"
 
 # Define the logging directory
 logging_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "logs")
@@ -14,11 +18,8 @@ os.makedirs(logging_dir, exist_ok=True)
 # Define the logging configuration
 logging.basicConfig(
     level=logging.INFO,
-    format=logging_str,
-    handlers=[
-        logging.FileHandler(logging_file),
-        logging.StreamHandler(sys.stdout)
-    ]
+    format=LOGGING_STR,
+    handlers=[logging.FileHandler(logging_file), logging.StreamHandler(sys.stdout)],
 )
 
 # Define the logger

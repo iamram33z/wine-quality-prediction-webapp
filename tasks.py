@@ -98,7 +98,7 @@ def lint(ctx):
     print("\033[0;34mLinting code...\033[0m")
     files_to_lint = "source app.py main.py setup.py tasks.py template.py"
     try:
-        ctx.run(f"pylint {files_to_lint}", warn=True)
+        ctx.run(f"pylint --disable=E0611 {files_to_lint}", warn=True)
         print("\033[0;32mLinting completed.\033[0m\n")
     except subprocess.SubprocessError as e:
         print(f"\033[0;31mLinting failed: {e}\033[0m")
