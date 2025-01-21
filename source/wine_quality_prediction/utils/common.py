@@ -10,8 +10,8 @@ from typing import Any, Dict
 
 import joblib
 import yaml
-from box import ConfigBox  # type: ignore
-from box.exceptions import BoxValueError
+from box import ConfigBox
+from box import BoxError as BoxValueError
 from ensure import ensure_annotations
 from wine_quality_prediction import logger
 
@@ -47,7 +47,7 @@ def read_yaml(path_to_yaml: Path) -> ConfigBox:
 
 
 @ensure_annotations
-def create_directory(path_to_directories: list, verbose: True):
+def create_directory(path_to_directories: list, verbose: bool = True):
     """
     Create directories if not exists.
 
@@ -60,13 +60,16 @@ def create_directory(path_to_directories: list, verbose: True):
 
     """
     for directory in path_to_directories:
-        if not os.path.exists(directory):
-            os.makedirs(directory)
-            if verbose:
-                logger.info("Directory created at the path: %s", directory)
+        if isinstance(directory, (str, Path)):
+            if not os.path.exists(directory):
+                os.makedirs(directory)
+                if verbose:
+                    logger.info("Directory created at the path: %s", directory)
+            else:
+                if verbose:
+                    logger.info("Directory already exists at the path: %s", directory)
         else:
-            if verbose:
-                logger.info("Directory already exists at the path: %s", directory)
+            raise TypeError(f"Expected str or Path, got {type(directory)}")
 
 
 @ensure_annotations

@@ -8,7 +8,7 @@ import os
 import sys
 
 # Define the logging String
-LOGGING_STR = "[%(asctime)s - %(name)s - %(levelname)s - %(message)s}"
+LOGGING_STR = "[%(asctime)s - %(name)s - %(levelname)s - %(message)s]"
 
 # Define the logging directory
 logging_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "logs")

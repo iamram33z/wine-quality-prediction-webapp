@@ -4,22 +4,23 @@ This is the main module of the project.
 
 # Import the Libraries
 from wine_quality_prediction import logger
+from wine_quality_prediction.pipeline.stage_01_data_ingestion import DataIngestionPipeline
 
-logger.info("This is the main module of the project.")
+# Defining the DataIngestionPipeline Stage
+STAGE_NAME = "STAGE 01: DATA INGESTION"
 
+# Main Function
+def main():
+    try:
+        logger.info(">>>>> Starting the Data Ingestion Pipeline <<<<<")
+        DataIngestionPipeline.main()
+        logger.info(">>>>> Data Ingestion Pipeline Completed <<<<<")
+    except Exception as e:
+        logger.exception(e)
+        raise e
 
-def add_numbers(a, b):
-    """Add two numbers."""
-    return a + b
-
-
-def subtract_numbers(a, b):
-    """Subtract two numbers."""
-    return a - b
-
+# Entry Point of the Script
 
 if __name__ == "__main__":
-    X = 5
-    Y = 3
-    print(f"Addition of {X} and {Y}: {add_numbers(X, Y)}")
-    print(f"Subtraction of {X} and {Y}: {subtract_numbers(X, Y)}")
+    main()
+
