@@ -16,7 +16,6 @@ pylint
 pytest
 pytest-cov
 black
-box==3.2.2
 isort
 pyarrow
 invoke
@@ -24,4 +23,5 @@ jupyter
 jupyterlab
 ipykernel
 ipython
+colarama
 -e .

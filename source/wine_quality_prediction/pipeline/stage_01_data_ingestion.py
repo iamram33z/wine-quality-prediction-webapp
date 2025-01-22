@@ -1,4 +1,6 @@
-
+"""
+This module contains the code for the first stage of the pipeline, i.e., Data Ingestion.
+"""
 
 # Importing necessary libraries
 from wine_quality_prediction.components.data_ingestion import DataIngestion

@@ -4,7 +4,7 @@ This module contains the ConfigurationManager class which is responsible for rea
 
 # Importing necessary libraries
 from wine_quality_prediction.constants import *
-from wine_quality_prediction.entity.config_entity import DataIngestionConfig
+from wine_quality_prediction.entity.config_entity import DataIngestionConfig, DataValidationConfig, DataTransformationConfig
 from wine_quality_prediction.utils.common import read_yaml, create_directory
 
 # Defining the ConfigurationManager class
@@ -35,3 +35,33 @@ class ConfigurationManager:
         )
 
         return data_ingestion_config_
+
+    def get_data_validation_config(self) -> DataValidationConfig:
+        config = self.config.data_validation
+        schema = self.schema.COLUMNS
+
+        create_directory([config.root_dir], verbose=True)
+
+        data_validation_config_ = DataValidationConfig(
+            root_dir=config.root_dir,
+            STATUS_FILE=config.STATUS_FILE,
+            unzip_data_dir=config.unzip_data_dir,
+            all_schema=schema
+        )
+
+        return data_validation_config_
+
+# Defining the get_data_transformation_config method
+    def get_data_transformation_config(self) -> DataTransformationConfig:
+        config = self.config.data_transformation
+
+        create_directory([config.root_dir], verbose=True)
+
+        data_transformation_config_ = DataTransformationConfig(
+            root_dir=config.root_dir,
+            input_data=config.input_data,
+            train_data = config.train_data,
+            test_data = config.test_data
+        )
+
+        return data_transformation_config_

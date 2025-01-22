@@ -2,25 +2,42 @@
 This is the main module of the project.
 """
 
-# Import the Libraries
+from colorama import Fore, Style
 from wine_quality_prediction import logger
 from wine_quality_prediction.pipeline.stage_01_data_ingestion import DataIngestionPipeline
+from wine_quality_prediction.pipeline.stage_02_data_validation import DataValidationPipeline
+from wine_quality_prediction.pipeline.stage_03_data_transformation import DataTransformationPipeline
 
-# Defining the DataIngestionPipeline Stage
-STAGE_NAME = "STAGE 01: DATA INGESTION"
+# Initialize colorama
+import colorama
+colorama.init(autoreset=True)
 
-# Main Function
-def main():
-    try:
-        logger.info(">>>>> Starting the Data Ingestion Pipeline <<<<<")
-        DataIngestionPipeline.main()
-        logger.info(">>>>> Data Ingestion Pipeline Completed <<<<<")
-    except Exception as e:
-        logger.exception(e)
-        raise e
+# Defining the DataIngestionPipeline Stage & Main Function
+STAGE_1_NAME = "STAGE 01: DATA INGESTION"
+try:
+    logger.info(f"{Fore.BLUE}>>>>> Starting the {STAGE_1_NAME} <<<<<{Style.RESET_ALL}")
+    DataIngestionPipeline.main()
+    logger.info(f"{Fore.GREEN}>>>>> The {STAGE_1_NAME} Pipeline Completed <<<<<{Style.RESET_ALL}")
+except Exception as e:
+    logger.exception(e)
+    raise e
 
-# Entry Point of the Script
+# Defining the DataValidationPipeline Stage & Main Function
+STAGE_2_NAME = "STAGE 02: DATA VALIDATION"
+try:
+    logger.info(f"{Fore.BLUE}>>>>> Starting the {STAGE_2_NAME} <<<<<{Style.RESET_ALL}")
+    DataValidationPipeline.main()
+    logger.info(f"{Fore.GREEN}>>>>> The {STAGE_2_NAME} Pipeline Completed <<<<<{Style.RESET_ALL}")
+except Exception as e:
+    logger.exception(e)
+    raise e
 
-if __name__ == "__main__":
-    main()
-
+# Defining the DataTransformationPipeline Stage & Main Function
+STAGE_3_NAME = "STAGE 03: DATA TRANSFORMATION"
+try:
+    logger.info(f"{Fore.BLUE}>>>>> Starting the {STAGE_3_NAME} <<<<<{Style.RESET_ALL}")
+    DataTransformationPipeline.main()
+    logger.info(f"{Fore.GREEN}>>>>> The {STAGE_3_NAME} Pipeline Completed <<<<<{Style.RESET_ALL}")
+except Exception as e:
+    logger.exception(e)
+    raise e

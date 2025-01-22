@@ -1,8 +1,23 @@
 # This file contains the configuration for the project
 artifacts_root: artifacts
 
+# Data ingestion configuration
 data_ingestion:
   root_dir: artifacts/data_ingestion
   source_URL: https://github.com/iamram33z/data-sets/raw/refs/heads/main/winequality-red.zip
   local_data_file: artifacts/data_ingestion/wine_quality_data.zip
   unzip_dir: artifacts/data_ingestion/wine_quality_data
+
+# Data validation configuration
+data_validation:
+  root_dir: artifacts/data_validation
+  unzip_data_dir: artifacts/data_ingestion/wine_quality_data/winequality-red.csv
+  STATUS_FILE: artifacts/data_validation/status.txt
+  all_schema: artifacts/data_validation/all_schema.json
+
+# Data transformation configuration
+data_transformation:
+  root_dir: artifacts/data_transformation
+  input_data: artifacts/data_ingestion/wine_quality_data/winequality-red.csv
+  train_data: artifacts/data_transformation/train_data.csv
+  test_data: artifacts/data_transformation/test_data.csv
