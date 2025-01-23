@@ -39,3 +39,34 @@ class DataTransformationConfig:
     input_data: Path
     train_data: Path
     test_data: Path
+
+# Defining the DataTrainingConfig class for data training configuration
+@dataclass(frozen=True)
+class ModelTrainingConfig:
+    """
+    Configuration for model training.
+    """
+    root_dir: Path
+    train_data: Path
+    test_data: Path
+    model_name: str
+    n_estimators: int
+    max_depth: int
+    random_state: int
+    target_column: str
+
+# Defining the ModelEvaluationConfig class for model evaluation configuration
+@dataclass(frozen=True)
+class ModelEvaluationConfig:
+    """
+    Configuration for model evaluation.
+    """
+    root_dir: Path
+    model_name: str
+    model: Path
+    test_data: Path
+    target_column: str
+    metrics_file: Path
+    metrics: dict
+    mlflow_uri: str
+    params: dict

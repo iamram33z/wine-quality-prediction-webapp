@@ -1,11 +1,13 @@
 """
 This module contains the ConfigurationManager class which is responsible for reading the configuration files and returning the configuration objects.
 """
+from mlflow.pyfunc.stdin_server import params
 
 # Importing necessary libraries
 from wine_quality_prediction.constants import *
-from wine_quality_prediction.entity.config_entity import DataIngestionConfig, DataValidationConfig, DataTransformationConfig
-from wine_quality_prediction.utils.common import read_yaml, create_directory
+from wine_quality_prediction.entity.config_entity import DataIngestionConfig, DataValidationConfig, \
+    DataTransformationConfig, ModelEvaluationConfig, ModelTrainingConfig
+from wine_quality_prediction.utils.common import read_yaml, create_directory, save_json
 
 # Defining the ConfigurationManager class
 class ConfigurationManager:
@@ -51,6 +53,7 @@ class ConfigurationManager:
 
         return data_validation_config_
 
+
 # Defining the get_data_transformation_config method
     def get_data_transformation_config(self) -> DataTransformationConfig:
         config = self.config.data_transformation
@@ -65,3 +68,46 @@ class ConfigurationManager:
         )
 
         return data_transformation_config_
+
+
+# Defining the get_model_training_config method
+    def get_model_training_config(self) -> ModelTrainingConfig:
+        config = self.config.model_training
+        params = self.params.RandomForest
+        schema = self.schema.TARGET_COLUMN
+
+        create_directory([config.root_dir], verbose=True)
+
+        model_training_config_ = ModelTrainingConfig(
+            root_dir=config.root_dir,
+            train_data=config.train_data,
+            test_data=config.test_data,
+            model_name=config.model_name,
+            n_estimators=params.n_estimators,
+            max_depth=params.max_depth,
+            random_state=params.random_state,
+            target_column=schema.name
+        )
+
+        return model_training_config_
+
+# Defining the get_model_evaluation_config method
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+        config = self.config.model_evaluation
+        params = self.params.RandomForest
+        schema = self.schema.TARGET_COLUMN
+
+        create_directory([config.root_dir], verbose=True)
+
+        model_evaluation_config_ = ModelEvaluationConfig(
+            root_dir=config.root_dir,
+            model_name=config.model_name,
+            model=config.model,
+            test_data=config.test_data,
+            target_column=schema.name,
+            metrics_file=config.metrics_file,
+            mlflow_uri="https://dagshub.com/iamram33z/wine-quality-prediction-webapp.mlflow",
+            metrics=params.metrics
+        )
+
+        return model_evaluation_config_

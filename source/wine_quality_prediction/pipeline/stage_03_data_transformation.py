@@ -2,8 +2,6 @@
 This module contains the DataTransformationPipeline class which is responsible for performing the data transformation
 """
 
-
-
 # Importing necessary libraries
 from wine_quality_prediction.components.data_transformation import DataTransformation
 from wine_quality_prediction.config.configuration import ConfigurationManager

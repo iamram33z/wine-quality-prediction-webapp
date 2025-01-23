@@ -11,12 +11,13 @@ An End to End Data Science Project regarding a Wine Quality Predicting Web Appli
 6. [Model Evaluation](#model-evaluation)
 7. [Model Deployment](#model-deployment)
 8. [Workflows](#workflows)
-9. [Conclusion](#conclusion)
-10. [References](#references)
-11. [Author](#author)
-12. [License](#license)
-13. [Acknowledgements](#acknowledgements)
-14. [Appendix](#appendix)
+9. [How to Run the Project](#how-to-run-the-project)
+10. [MLflow](#mlflow)
+11. [Deployment](#deployment)
+12. [References](#references)
+13. [License](#license)
+14. [Author](#author)
+15. [Acknowledgements](#acknowledgements)
 
 ## Introduction
 This project is an end to end data science project regarding a Wine Quality Prediction Web Application. The main goal of this project is to predict the quality of the wine based on the given features. The dataset used in this project is the Wine Quality Dataset which is available on the UCI Machine Learning Repository. The dataset consists of 12 features and 1 target variable. The features are fixed acidity, volatile acidity, citric acid, residual sugar, chlorides, free sulfur dioxide, total sulfur dioxide, density, pH, sulphates, alcohol, and quality. The target variable is the quality of the wine which ranges from 3 to 9. The dataset consists of 1599 samples. The dataset is preprocessed and then used to build a machine learning model. The model is then evaluated using various evaluation metrics. The model is then deployed as a web application using Flask. The web application is then deployed on AWS Cloud 9.
@@ -50,3 +51,58 @@ The following are the workflows of the project:
 7. Update the pipeline
 8. Update the main.py
 9. Update the app.py
+
+## How to Run the Project
+To run the project, follow the steps below:
+
+STEP 01: Clone the repository:
+``` bash
+https://github.com/iamram33z/wine-quality-prediction-webapp
+``` 
+
+STEP 02: Create a virtual environment:
+``` bash
+conda create -n wine-quality-prediction-webapp python=3.12 -y
+conda activate wine-quality-prediction-webapp
+``` 
+
+STEP 03: Install the required libraries:
+``` bash
+pip install -r requirements.txt
+``` 
+
+STEP 04: Run the project:
+``` bash
+python app.py
+``` 
+
+STEP 05: Open the web application in the browser:
+``` bash
+Open up your local host in the browser and port
+``` 
+
+## MLflow
+
+[Documentation](https://www.mlflow.org/docs/latest/index.html)
+
+##### cmd
+``` bash
+mlflow ui
+```
+
+### dagshub
+[Documentation](https://dagshub.com/docs/)
+
+MLFLOW_TRACKING_URI=https://dagshub.com/iamram33z/wine-quality-prediction-webapp.mlflow \
+MLFLOW_TRACKING_USERNAME=iamram33z \
+MLFLOW_TRACKING_PASSWORD=5db0db792536803babc5014d2824f6dc1001fbf8 \
+python script.py
+
+Run the following command to set the environment variables:
+``` bash
+export MLFLOW_TRACKING_URI=https://dagshub.com/iamram33z/wine-quality-prediction-webapp.mlflow
+export MLFLOW_TRACKING_USERNAME=iamram33z
+export MLFLOW_TRACKING_PASSWORD=5db0db792536803babc5014d2824f6dc1001fbf8
+python main.py
+```
+
