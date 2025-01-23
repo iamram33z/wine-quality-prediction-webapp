@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RameezRassdeen/Documents/wine-quality-prediction-webapp/mlruns/0/9dc109c3566542188eeb9e32e4e7f435/artifacts
+end_time: 1737657020809
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 9dc109c3566542188eeb9e32e4e7f435
+run_name: youthful-mink-579
+run_uuid: 9dc109c3566542188eeb9e32e4e7f435
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737657020781
+status: 4
+tags: []
+user_id: RameezRassdeen

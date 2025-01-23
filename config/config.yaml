@@ -36,5 +36,4 @@ model_evaluation:
   test_data: artifacts/data_transformation/test_data.csv
   metrics_file: artifacts/model_evaluation/evaluation_metrics.json
   model_name: random_forest_model.joblib
-  evaluation_metrics: artifacts/model_evaluation/evaluation_metrics.json
-  mlflow_uri: "https://dagshub.com/iamram33z/wine-quality-prediction-webapp.mlflow"
+  mlflow_uri: https://dagshub.com/iamram33z/wine-quality-prediction-webapp.mlflow

@@ -1,7 +1,6 @@
 """
 This module contains the ConfigurationManager class which is responsible for reading the configuration files and returning the configuration objects.
 """
-from mlflow.pyfunc.stdin_server import params
 
 # Importing necessary libraries
 from wine_quality_prediction.constants import *
@@ -106,8 +105,8 @@ class ConfigurationManager:
             test_data=config.test_data,
             target_column=schema.name,
             metrics_file=config.metrics_file,
-            mlflow_uri="https://dagshub.com/iamram33z/wine-quality-prediction-webapp.mlflow",
-            metrics=params.metrics
+            mlflow_uri=config.mlflow_uri,
+            params=params # since I want all the parameters
         )
 
         return model_evaluation_config_

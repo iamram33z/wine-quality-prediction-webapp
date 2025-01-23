@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RameezRassdeen/Documents/wine-quality-prediction-webapp/mlruns/0/f1456317c5c546ca911a4d3f02012ebd/artifacts
+end_time: 1737656501874
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f1456317c5c546ca911a4d3f02012ebd
+run_name: caring-frog-865
+run_uuid: f1456317c5c546ca911a4d3f02012ebd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737656501850
+status: 4
+tags: []
+user_id: RameezRassdeen

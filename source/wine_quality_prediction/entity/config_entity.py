@@ -67,6 +67,5 @@ class ModelEvaluationConfig:
     test_data: Path
     target_column: str
     metrics_file: Path
-    metrics: dict
     mlflow_uri: str
     params: dict

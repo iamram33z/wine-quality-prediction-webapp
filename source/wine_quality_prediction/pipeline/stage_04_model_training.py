@@ -1,5 +1,6 @@
-
-
+"""
+Pipeline Stage for Model Training
+"""
 
 #  Importing necessary libraries
 from wine_quality_prediction.components.model_training import ModelTraining

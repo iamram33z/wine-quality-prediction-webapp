@@ -8,6 +8,7 @@ from wine_quality_prediction.pipeline.stage_01_data_ingestion import DataIngesti
 from wine_quality_prediction.pipeline.stage_02_data_validation import DataValidationPipeline
 from wine_quality_prediction.pipeline.stage_03_data_transformation import DataTransformationPipeline
 from wine_quality_prediction.pipeline.stage_04_model_training import ModelTrainingPipeline
+# from wine_quality_prediction.pipeline.stage_05_model_evaluation import ModelEvaluationPipeline
 
 
 # Initialize colorama

@@ -15,6 +15,7 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 from urllib.parse import urlparse
 import mlflow
 import mlflow.sklearn
+from pathlib import Path
 
 
 # Defining the ModelEvaluation class
@@ -40,7 +41,7 @@ class ModelEvaluation:
 
             # Saving the metrics
             metrics = {
-                "mse": rmse,
+                "rmse": rmse,
                 "mae": mae,
                 "r2": r2
             }
@@ -69,21 +70,29 @@ class ModelEvaluation:
                 predicted = model.predict(test_x)
                 metrics = self.evaluate_metrics(test_y, predicted)
 
-                for key, value in metrics.items():
-                    mlflow.log_metric(key, value)
+                # Saving the scores
+                scores = {
+                    "rmse": metrics["rmse"],
+                    "mae": metrics["mae"],
+                    "r2": metrics["r2"]
+                }
+
+                # Convert the string path to a Path object
+                metrics_file_path = Path(self.config.metrics_file)
+                save_json(path=metrics_file_path, data=scores)
 
                 mlflow.log_params(self.config.params)
                 mlflow.log_metric("rmse", metrics["rmse"])
                 mlflow.log_metric("mae", metrics["mae"])
                 mlflow.log_metric("r2", metrics["r2"])
 
-                save_json(self.config.metrics_file, metrics)
-
                 # Model registry does not support joblib files
-            if tracking_uri_type_store.scheme != "file":
-                mlflow.sklearn.log_model(model, register_model(self.config.model_name))
-            else:
-                mlflow.sklearn.log_model(model, self.config.model_name)
+                if tracking_uri_type_store.scheme != "file":
+                    mlflow.sklearn.log_model(model, artifact_path=self.config.model_name)
+                    mlflow.register_model(model_uri=f"runs:/{mlflow.active_run().info.run_id}/{self.config.model_name}",
+                                          name=self.config.model_name)
+                else:
+                    mlflow.sklearn.log_model(model, self.config.model_name)
 
         except Exception as e:
             logger.exception(e)

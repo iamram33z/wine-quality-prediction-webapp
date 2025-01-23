@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RameezRassdeen/Documents/wine-quality-prediction-webapp/mlruns/0/acd607debf9a42dc8fd934d6e86b6fca/artifacts
+end_time: 1737656873903
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: acd607debf9a42dc8fd934d6e86b6fca
+run_name: sincere-cow-249
+run_uuid: acd607debf9a42dc8fd934d6e86b6fca
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737656873884
+status: 4
+tags: []
+user_id: RameezRassdeen

@@ -95,14 +95,14 @@ mlflow ui
 
 MLFLOW_TRACKING_URI=https://dagshub.com/iamram33z/wine-quality-prediction-webapp.mlflow \
 MLFLOW_TRACKING_USERNAME=iamram33z \
-MLFLOW_TRACKING_PASSWORD=5db0db792536803babc5014d2824f6dc1001fbf8 \
+MLFLOW_TRACKING_PASSWORD= $$
 python script.py
 
 Run the following command to set the environment variables:
 ``` bash
 export MLFLOW_TRACKING_URI=https://dagshub.com/iamram33z/wine-quality-prediction-webapp.mlflow
 export MLFLOW_TRACKING_USERNAME=iamram33z
-export MLFLOW_TRACKING_PASSWORD=5db0db792536803babc5014d2824f6dc1001fbf8
+export MLFLOW_TRACKING_PASSWORD= $$
 python main.py
 ```
 

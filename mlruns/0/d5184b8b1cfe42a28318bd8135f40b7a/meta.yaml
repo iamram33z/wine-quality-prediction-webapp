@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RameezRassdeen/Documents/wine-quality-prediction-webapp/mlruns/0/d5184b8b1cfe42a28318bd8135f40b7a/artifacts
+end_time: 1737656408942
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d5184b8b1cfe42a28318bd8135f40b7a
+run_name: rogue-colt-144
+run_uuid: d5184b8b1cfe42a28318bd8135f40b7a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737656408917
+status: 4
+tags: []
+user_id: RameezRassdeen

@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RameezRassdeen/Documents/wine-quality-prediction-webapp/mlruns/0/ca7247c6122349f78097fa4473865902/artifacts
+end_time: 1737656422705
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ca7247c6122349f78097fa4473865902
+run_name: dapper-ant-328
+run_uuid: ca7247c6122349f78097fa4473865902
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737656422679
+status: 4
+tags: []
+user_id: RameezRassdeen
