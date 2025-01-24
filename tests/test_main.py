@@ -1,3 +1,8 @@
+"""
+This module contains the unit tests for the main module.
+"""
+
+# Import necessary libraries
 from unittest import mock
 from wine_quality_prediction import logger
 from main import (
