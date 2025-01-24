@@ -1,0 +1,152 @@
+/* Global Styles */
+body {
+    font-family: 'Manrope', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    color: #ffffff;
+}
+
+p {
+    color: #ffffff;
+}
+
+/* Header */
+.masthead {
+    background-image: url('../assets/wine.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: #fff;
+    text-align: center;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    bottom: 0%;
+    left: 0;
+    right: 0;
+}
+
+.title-container {
+    z-index: 1;
+}
+
+.app-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.app-subtitle {
+    font-style: italic;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+/* Form Section */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.form-box {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 700px;
+    width: 100%;
+}
+
+.title-box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-title {
+    font-size: 1.5rem;
+    color: #f8f9fa;
+}
+
+.form-row-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.form-row {
+    flex: 1;
+    gap: 10px;
+    margin-bottom: 10px
+}
+
+.form-row.full-width {
+    flex: 0 0 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #7F1734;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    background: #1c1c1c;
+    color: #f8f9fa;
+    border-radius: 5px;
+}
+
+.submit-btn {
+    background-color: #7F1734;
+    color: white;
+    padding: 12px 0;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.submit-btn:hover {
+    background-color: #920012;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 15px 0;
+    background: #181818;
+}
+
+.social-icons {
+    list-style: none;
+    padding: 0;
+}
+
+.social-icons li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+}

@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RameezRassdeen/Documents/wine-quality-prediction-webapp/mlruns/0/5d5753ca0c024c14a65faf8560f6d6c6/artifacts
+end_time: 1737686720012
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5d5753ca0c024c14a65faf8560f6d6c6
+run_name: intrigued-turtle-270
+run_uuid: 5d5753ca0c024c14a65faf8560f6d6c6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737686714411
+status: 4
+tags: []
+user_id: your_username

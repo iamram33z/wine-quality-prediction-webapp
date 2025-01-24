@@ -2,24 +2,22 @@
 Sample application to demonstrate the usage of the Calculator class.
 """
 
+# Import Necessary Libraries
+import os
+import numpy as np
+import pandas as pd
+from flask import Flask, request, render_template
+from wine_quality_prediction.pipeline.prediction import WineQualityPrediction
 
-class Calculator:
-    """A simple calculator class."""
+# Create an instance of the Flask class
+app = Flask(__name__)
 
-    @staticmethod
-    def multiply(a, b):
-        """Multiply two numbers."""
-        return a * b
-
-    @staticmethod
-    def divide(a, b):
-        """Divide two numbers."""
-        if b == 0:
-            raise ValueError("Cannot divide by zero.")
-        return a / b
+@app.route("/", methods=["GET"])
+def home():
+    return render_template("index.html")
 
 
+
+# Main Function
 if __name__ == "__main__":
-    calculator = Calculator()
-    print(f"Multiplication of 6 and 4: {calculator.multiply(6, 4)}")
-    print(f"Division of 10 by 2: {calculator.divide(10, 2)}")
+    app.run(host="0.0.0.0", port=5000, debug=True)

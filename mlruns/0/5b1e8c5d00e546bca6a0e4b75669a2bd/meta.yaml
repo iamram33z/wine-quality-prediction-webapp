@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RameezRassdeen/Documents/wine-quality-prediction-webapp/mlruns/0/5b1e8c5d00e546bca6a0e4b75669a2bd/artifacts
+end_time: 1737686946844
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5b1e8c5d00e546bca6a0e4b75669a2bd
+run_name: incongruous-wasp-891
+run_uuid: 5b1e8c5d00e546bca6a0e4b75669a2bd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737686942155
+status: 4
+tags: []
+user_id: your_username

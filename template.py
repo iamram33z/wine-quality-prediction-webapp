@@ -37,6 +37,7 @@ list_of_files = [
     f"source/{PROJECT_NAME}/pipeline/stage_03_data_transformation.py",
     f"source/{PROJECT_NAME}/pipeline/stage_04_model_training.py",
     f"source/{PROJECT_NAME}/pipeline/stage_05_model_evaluation.py",
+    f"source/{PROJECT_NAME}/pipeline/prediction.py",
     f"source/{PROJECT_NAME}/entity/__init__.py",
     f"source/{PROJECT_NAME}/entity/config_entity.py",
     f"source/{PROJECT_NAME}/constants/__init__.py",

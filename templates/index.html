@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Wine Quality Prediction</title>
+        <link rel="icon" type="image/x-icon" href="static/assets/favicon.ico" />
+        <!-- Font Awesome -->
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+        <!-- Core CSS -->
+        <link href="static/css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="masthead">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="title-container">
+                    <h1 class="app-title">Wine Quality Prediction</h1>
+                    <p class="app-subtitle">Quickly and easily determine the quality of your wine</p>
+                </div>
+            </div>
+        </header>
+        <!-- Form Section -->
+        <main class="container form-container">
+            <div class="form-box">
+                <div class="title-box">
+                    <h2 class="form-title">Enter Wine Parameters</h2>
+                </div>
+                <form class="form-details" action="/predict" method="post">
+                    <div class="form-row-group">
+                        <div class="form-row">
+                            <label for="fixed_acidity">Fixed Acidity</label>
+                            <input type="text" name="fixed_acidity" id="fixed_acidity" placeholder="e.g., 7.4" required />
+                        </div>
+                        <div class="form-row">
+                            <label for="volatile_acidity">Volatile Acidity</label>
+                            <input type="text" name="volatile_acidity" id="volatile_acidity" placeholder="e.g., 0.7" required />
+                        </div>
+                    </div>
+                    <div class="form-row-group">
+                        <div class="form-row">
+                            <label for="citric_acid">Citric Acid</label>
+                            <input type="text" name="citric_acid" id="citric_acid" placeholder="e.g., 0.0" required />
+                        </div>
+                        <div class="form-row">
+                            <label for="residual_sugar">Residual Sugar</label>
+                            <input type="text" name="residual_sugar" id="residual_sugar" placeholder="e.g., 1.9" required />
+                        </div>
+                    </div>
+                    <div class="form-row-group">
+                        <div class="form-row">
+                            <label for="chlorides">Chlorides</label>
+                            <input type="text" name="chlorides" id="chlorides" placeholder="e.g., 0.076" required />
+                        </div>
+                        <div class="form-row">
+                            <label for="free_sulfur_dioxide">Free Sulfur Dioxide</label>
+                            <input type="text" name="free_sulfur_dioxide" id="free_sulfur_dioxide" placeholder="e.g., 11" required />
+                        </div>
+                    </div>
+                    <div class="form-row-group">
+                        <div class="form-row">
+                            <label for="total_sulfur_dioxide">Total Sulfur Dioxide</label>
+                            <input type="text" name="total_sulfur_dioxide" id="total_sulfur_dioxide" placeholder="e.g., 34" required />
+                        </div>
+                        <div class="form-row">
+                            <label for="density">Density</label>
+                            <input type="text" name="density" id="density" placeholder="e.g., 0.9978" required />
+                        </div>
+                    </div>
+                    <div class="form-row-group">
+                        <div class="form-row">
+                            <label for="pH">pH</label>
+                            <input type="text" name="pH" id="pH" placeholder="e.g., 3.51" required />
+                        </div>
+                        <div class="form-row">
+                            <label for="sulphates">Sulphates</label>
+                            <input type="text" name="sulphates" id="sulphates" placeholder="e.g., 0.56" required />
+                        </div>
+                    </div>
+                    <div class="form-row-group">
+                        <div class="form-row full-width">
+                            <label for="alcohol">Alcohol</label>
+                            <input type="text" name="alcohol" id="alcohol" placeholder="e.g., 9.4" required />
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn">Predict</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <ul class="social-icons">
+                    <li><a href="https://github.com/entbappy"><i class="fab fa-github"></i></a></li>
+                </ul>
+            </div>
+        </footer>
+    </body>
+</html>

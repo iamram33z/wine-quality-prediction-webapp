@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RameezRassdeen/Documents/wine-quality-prediction-webapp/mlruns/0/ee2df59a590e44d89e3eda90dd916554/artifacts
+end_time: 1737686791772
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ee2df59a590e44d89e3eda90dd916554
+run_name: sneaky-mule-919
+run_uuid: ee2df59a590e44d89e3eda90dd916554
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737686787267
+status: 4
+tags: []
+user_id: your_username
