@@ -1,11 +1,11 @@
 # Base image with Python 3.12
-FROM python:3.12-slim
+FROM python:3.11-slim
 
 # Set working directory in the container
 WORKDIR /app
 
 # Run the following commands to install the required packages
-RUN apt update -y && apt install awscli -y
+RUN apt-get update -y && apt-get install -y build-essential libssl-dev libffi-dev python3-dev && apt install awscli -y
 
 # Copy the current directory contents into the container at /app
 COPY . /app
