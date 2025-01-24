@@ -19,7 +19,7 @@ project_path = Path(os.getcwd())
 # File Details
 list_of_files = [
     ".github/workflows/.gitkeep",
-    ".github/workflows/CI.yml",
+    ".github/workflows/CICD.yml",
     f"source/{PROJECT_NAME}/__init__.py",
     f"source/{PROJECT_NAME}/components/__init__.py",
     f"source/{PROJECT_NAME}/components/data_ingestion.py",
