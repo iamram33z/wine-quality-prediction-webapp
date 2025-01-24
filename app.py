@@ -16,10 +16,14 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
-@app.route("/train", methods=["POST"])
+@app.route("/train", methods=["GET", "POST"])
 def train():
-    os.system("python main.py")
-    return "Model Trained Successfully!"
+    if request.method == "POST":
+        os.system("python main.py")
+        return "Model Trained Successfully!"
+    elif request.method == "GET":
+        return "This endpoint triggers model training. Use POST to start training."
+
 
 @app.route("/predict", methods=["POST"])
 def predict():
