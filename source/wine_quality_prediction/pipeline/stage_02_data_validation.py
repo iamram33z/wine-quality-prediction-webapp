@@ -2,13 +2,14 @@
 This module contains the DataValidationPipeline class which is responsible for validating the data.
 """
 
+from wine_quality_prediction import logger
 # Importing necessary libraries
 from wine_quality_prediction.components.data_validation import DataValidation
 from wine_quality_prediction.config.configuration import ConfigurationManager
-from wine_quality_prediction import logger
 
 # Defining the DataValidationPipeline Stage
 STAGE_NAME = "STAGE 02: DATA VALIDATION"
+
 
 # Defining the DataValidationPipeline class
 class DataValidationPipeline:

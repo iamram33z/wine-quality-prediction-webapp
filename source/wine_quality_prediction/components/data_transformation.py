@@ -4,9 +4,11 @@ This module contains the DataTransformation class which is responsible for split
 
 # Importing Required Libraries
 import pandas as pd
-from wine_quality_prediction import logger
-from wine_quality_prediction.entity.config_entity import DataTransformationConfig
 from sklearn.model_selection import train_test_split
+from wine_quality_prediction import logger
+from wine_quality_prediction.entity.config_entity import \
+    DataTransformationConfig
+
 
 # Defining the DataTransformation class
 class DataTransformation:
@@ -28,7 +30,9 @@ class DataTransformation:
             test.to_csv(self.config.test_data, index=False)
 
             # Logging the status
-            logger.info(f"Train and Test data saved successfully at {self.config.root_dir}")
+            logger.info(
+                f"Train and Test data saved successfully at {self.config.root_dir}"
+            )
             logger.info(f"Train data shape: {train.shape}")
             logger.info(f"Test data shape: {test.shape}")
 

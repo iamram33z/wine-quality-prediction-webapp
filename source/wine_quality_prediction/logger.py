@@ -3,7 +3,9 @@ import os
 
 # Create a logger
 logger = logging.getLogger("wine_quality_prediction")
-logger.setLevel(logging.DEBUG)  # Set the logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+logger.setLevel(
+    logging.DEBUG
+)  # Set the logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
 
 # Create a console handler
 console_handler = logging.StreamHandler()

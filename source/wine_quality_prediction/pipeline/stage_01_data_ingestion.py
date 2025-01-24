@@ -2,13 +2,14 @@
 This module contains the code for the first stage of the pipeline, i.e., Data Ingestion.
 """
 
+from wine_quality_prediction import logger
 # Importing necessary libraries
 from wine_quality_prediction.components.data_ingestion import DataIngestion
 from wine_quality_prediction.config.configuration import ConfigurationManager
-from wine_quality_prediction import logger
 
 # Defining the DataIngestionPipeline Stage
 STAGE_NAME = "STAGE 01: DATA INGESTION"
+
 
 # Defining the DataIngestionPipeline class
 class DataIngestionPipeline:

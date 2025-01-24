@@ -4,17 +4,20 @@ Sample application to demonstrate the usage of the Calculator class.
 
 # Import Necessary Libraries
 import os
+
 import numpy as np
 import pandas as pd
-from flask import Flask, request, render_template
+from flask import Flask, render_template, request
 from wine_quality_prediction.pipeline.prediction import WineQualityPrediction
 
 # Create an instance of the Flask class
 app = Flask(__name__)
 
+
 @app.route("/", methods=["GET"])
 def home():
     return render_template("index.html")
+
 
 @app.route("/train", methods=["GET", "POST"])
 def train():
@@ -54,7 +57,7 @@ def predict():
                 "density": density,
                 "pH": pH,
                 "sulphates": sulphates,
-                "alcohol": alcohol
+                "alcohol": alcohol,
             }
 
             # Convert the input data to a DataFrame
@@ -72,7 +75,7 @@ def predict():
                 "density": "density",
                 "pH": "pH",
                 "sulphates": "sulphates",
-                "alcohol": "alcohol"
+                "alcohol": "alcohol",
             }
 
             # Rename the columns in the input DataFrame
@@ -90,6 +93,7 @@ def predict():
 
     else:
         return "An error occurred."
+
 
 # Main Function
 if __name__ == "__main__":

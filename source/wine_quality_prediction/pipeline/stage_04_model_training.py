@@ -2,13 +2,14 @@
 Pipeline Stage for Model Training
 """
 
+from wine_quality_prediction import logger
 #  Importing necessary libraries
 from wine_quality_prediction.components.model_training import ModelTraining
 from wine_quality_prediction.config.configuration import ConfigurationManager
-from wine_quality_prediction import logger
 
 # Defining the ModelTrainingPipeline Stage
 STAGE_NAME = "STAGE 04: MODEL TRAINING"
+
 
 # Defining the ModelTrainingPipeline class
 class ModelTrainingPipeline:
@@ -30,6 +31,7 @@ class ModelTrainingPipeline:
         except Exception as e:
             logger.exception(e)
             raise e
+
 
 if __name__ == "__main__":
     try:

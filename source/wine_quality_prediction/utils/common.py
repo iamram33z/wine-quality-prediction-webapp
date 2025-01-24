@@ -10,8 +10,8 @@ from typing import Any, Dict
 
 import joblib
 import yaml
-from box import ConfigBox
 from box import BoxError as BoxValueError
+from box import ConfigBox
 from ensure import ensure_annotations
 from wine_quality_prediction import logger
 

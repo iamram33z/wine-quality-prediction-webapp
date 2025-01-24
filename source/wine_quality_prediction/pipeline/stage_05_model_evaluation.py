@@ -2,13 +2,14 @@
 
 """
 
+from wine_quality_prediction import logger
 # Importing necessary libraries
 from wine_quality_prediction.components.model_evaluation import ModelEvaluation
 from wine_quality_prediction.config.configuration import ConfigurationManager
-from wine_quality_prediction import logger
 
 # Defining the ModelEvaluationPipeline Stage
 STAGE_NAME = "STAGE 05: MODEL EVALUATION"
+
 
 # Defining the ModelEvaluationPipeline class
 class ModelEvaluationPipeline:
@@ -30,6 +31,7 @@ class ModelEvaluationPipeline:
         except Exception as e:
             logger.exception(e)
             raise e
+
 
 # Running the ModelEvaluationPipeline
 if __name__ == "__main__":

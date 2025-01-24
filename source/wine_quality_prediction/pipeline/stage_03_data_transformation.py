@@ -2,13 +2,15 @@
 This module contains the DataTransformationPipeline class which is responsible for performing the data transformation
 """
 
-# Importing necessary libraries
-from wine_quality_prediction.components.data_transformation import DataTransformation
-from wine_quality_prediction.config.configuration import ConfigurationManager
 from wine_quality_prediction import logger
+# Importing necessary libraries
+from wine_quality_prediction.components.data_transformation import \
+    DataTransformation
+from wine_quality_prediction.config.configuration import ConfigurationManager
 
 # Defining the DataTransformationPipeline Stage
 STAGE_NAME = "STAGE 03: DATA TRANSFORMATION"
+
 
 # Defining the DataTransformationPipeline class
 class DataTransformationPipeline:
@@ -26,18 +28,24 @@ class DataTransformationPipeline:
                 # Instantiating the ConfigurationManager class
                 config_manager = ConfigurationManager()
                 # Getting the data transformation configuration
-                data_transformation_config = config_manager.get_data_transformation_config()
+                data_transformation_config = (
+                    config_manager.get_data_transformation_config()
+                )
                 # Instantiating the DataTransformation class
-                data_transformation = DataTransformation(config=data_transformation_config)
+                data_transformation = DataTransformation(
+                    config=data_transformation_config
+                )
                 # Transforming the data
                 data_transformation.train_test_split(),
             else:
-                raise Exception("Data Validation Failed. Please validate the data before proceeding to Data Transformation.")
-
+                raise Exception(
+                    "Data Validation Failed. Please validate the data before proceeding to Data Transformation."
+                )
 
         except Exception as e:
             logger.exception(e)
             raise e
+
 
 if __name__ == "__main__":
     try:
@@ -47,7 +55,3 @@ if __name__ == "__main__":
     except Exception as e:
         logger.exception(e)
         raise e
-
-
-
-
