@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Wine Quality Prediction Result</title>
+        <link rel="icon" type="image/x-icon" href="static/assets/favicon.ico" />
+        <!-- Font Awesome -->
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+        <!-- Core CSS -->
+        <link href="static/css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="masthead">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="title-container">
+                    <h1 class="app-title">Wine Quality Prediction</h1>
+                    <p class="app-subtitle">Quickly and easily determine the quality of your wine</p>
+                </div>
+            </div>
+        </header>
+        <!-- Result Section -->
+        <main class="container result-container">
+            <div class="result-box">
+                <div class="title-box">
+                    <h2 class="result-title">Prediction Result</h2>
+                </div>
+                <div class="result-details">
+                    <p class="result-text">The predicted wine quality is: <span id="prediction-result">{{prediction}}</span></p>
+                </div>
+                <div class="form-actions">
+                    <a href="/" class="back-btn">Back to Form</a>
+                </div>
+            </div>
+        </main>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <ul class="social-icons">
+                    <li><a href="https://github.com/iamram33z"><i class="fab fa-github"></i></a></li>
+                </ul>
+            </div>
+        </footer>
+    </body>
+</html>

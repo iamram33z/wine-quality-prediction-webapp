@@ -52,6 +52,7 @@ list_of_files = [
     "setup.py",
     "notebooks/trial1.ipynb",
     "templates/index.html",
+    "templates/result.html",
     "tests/test_main.py",
     "tasks.py",
     ".coveragerc",
