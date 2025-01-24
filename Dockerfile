@@ -1,5 +1,5 @@
-# Base image with Python 3.12
-FROM python:3.11-slim
+# Base image with Python 3.10-slim
+FROM python:3.10-slim
 
 # Set working directory in the container
 WORKDIR /app
@@ -11,6 +11,6 @@ RUN apt-get update -y && apt-get install -y build-essential libssl-dev libffi-de
 COPY . /app
 
 # Install dependencies
-RUN pip install --upgrade pip==23.1 && pip install -r requirements.txt --verbose
+RUN pip install --upgrade pip && pip install -r requirements.txt --verbose
 
 CMD ["python3", "app.py"]
