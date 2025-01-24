@@ -11,6 +11,6 @@ RUN apt update -y && apt install awscli -y
 COPY . /app
 
 # Install dependencies
-RUN pip install --upgrade pip && pip install -r requirements.txt
+RUN pip install --upgrade pip==23.1 && pip install -r requirements.txt --verbose
 
 CMD ["python3", "app.py"]
