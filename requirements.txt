@@ -24,4 +24,5 @@ jupyterlab
 ipykernel
 ipython
 colarama
+python-dotenv
 -e .

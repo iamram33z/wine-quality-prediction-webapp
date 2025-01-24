@@ -1,22 +1,25 @@
 """
 This is the main module of the project.
 """
-
+# Importing necessary libraries
+import os
 from colorama import Fore, Style
+from dotenv import load_dotenv
+
 from wine_quality_prediction import logger
 from wine_quality_prediction.pipeline.stage_01_data_ingestion import DataIngestionPipeline
 from wine_quality_prediction.pipeline.stage_02_data_validation import DataValidationPipeline
 from wine_quality_prediction.pipeline.stage_03_data_transformation import DataTransformationPipeline
 from wine_quality_prediction.pipeline.stage_04_model_training import ModelTrainingPipeline
-# from wine_quality_prediction.pipeline.stage_05_model_evaluation import ModelEvaluationPipeline
+from wine_quality_prediction.pipeline.stage_05_model_evaluation import ModelEvaluationPipeline
 
 
 # Initialize colorama
 import colorama
-from wine_quality_prediction.pipeline.stage_05_model_evaluation import ModelEvaluationPipeline
-
-
 colorama.init(autoreset=True)
+
+# Load environment variables from .env file
+load_dotenv()
 
 
 # Defining the DataIngestionPipeline Stage & Main Function
@@ -24,7 +27,7 @@ STAGE_1_NAME = "STAGE 01: DATA INGESTION"
 try:
     logger.info(f"{Fore.BLUE}>>>>> Starting the {STAGE_1_NAME} <<<<<{Style.RESET_ALL}")
     DataIngestionPipeline.main()
-    logger.info(f"{Fore.GREEN}>>>>> The {STAGE_1_NAME} Pipeline Completed <<<<<{Style.RESET_ALL}")
+    logger.info(f"{Fore.GREEN}>>>>> The {STAGE_1_NAME} Pipeline Completed Successfully! <<<<<{Style.RESET_ALL}\n")
 except Exception as e:
     logger.exception(e)
     raise e
@@ -35,7 +38,7 @@ STAGE_2_NAME = "STAGE 02: DATA VALIDATION"
 try:
     logger.info(f"{Fore.BLUE}>>>>> Starting the {STAGE_2_NAME} <<<<<{Style.RESET_ALL}")
     DataValidationPipeline.main()
-    logger.info(f"{Fore.GREEN}>>>>> The {STAGE_2_NAME} Pipeline Completed <<<<<{Style.RESET_ALL}")
+    logger.info(f"{Fore.GREEN}>>>>> The {STAGE_2_NAME} Pipeline Completed Successfully! <<<<<{Style.RESET_ALL}")
 except Exception as e:
     logger.exception(e)
     raise e
@@ -46,7 +49,7 @@ STAGE_3_NAME = "STAGE 03: DATA TRANSFORMATION"
 try:
     logger.info(f"{Fore.BLUE}>>>>> Starting the {STAGE_3_NAME} <<<<<{Style.RESET_ALL}")
     DataTransformationPipeline.main()
-    logger.info(f"{Fore.GREEN}>>>>> The {STAGE_3_NAME} Pipeline Completed <<<<<{Style.RESET_ALL}")
+    logger.info(f"{Fore.GREEN}>>>>> The {STAGE_3_NAME} Pipeline Completed Successfully! <<<<<{Style.RESET_ALL}")
 except Exception as e:
     logger.exception(e)
     raise e
@@ -57,7 +60,7 @@ STAGE_4_NAME = "STAGE 04: MODEL TRAINING"
 try:
     logger.info(f"{Fore.BLUE}>>>>> Starting the {STAGE_4_NAME} <<<<<{Style.RESET_ALL}")
     ModelTrainingPipeline.main()
-    logger.info(f"{Fore.GREEN}>>>>> The {STAGE_4_NAME} Pipeline Completed <<<<<{Style.RESET_ALL}")
+    logger.info(f"{Fore.GREEN}>>>>> The {STAGE_4_NAME} Pipeline Completed Successfully! <<<<<{Style.RESET_ALL}")
 except Exception as e:
     logger.exception(e)
     raise e
@@ -68,7 +71,7 @@ STAGE_5_NAME = "STAGE 05: MODEL EVALUATION"
 try:
     logger.info(f"{Fore.BLUE}>>>>> Starting the {STAGE_5_NAME} <<<<<{Style.RESET_ALL}")
     ModelEvaluationPipeline.main()
-    logger.info(f"{Fore.GREEN}>>>>> The {STAGE_5_NAME} Pipeline Completed <<<<<{Style.RESET_ALL}")
+    logger.info(f"{Fore.GREEN}>>>>> The {STAGE_5_NAME} Pipeline Completed Successfully! <<<<<{Style.RESET_ALL}")
 except Exception as e:
     logger.exception(e)
     raise e

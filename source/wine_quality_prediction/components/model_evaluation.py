@@ -7,6 +7,7 @@ import os
 import pandas as pd
 import numpy as np
 import joblib
+from flask.cli import load_dotenv
 from mlflow import register_model
 from wine_quality_prediction import logger
 from wine_quality_prediction.entity.config_entity import ModelEvaluationConfig

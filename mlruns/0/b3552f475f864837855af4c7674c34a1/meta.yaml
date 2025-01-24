@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RameezRassdeen/Documents/wine-quality-prediction-webapp/mlruns/0/b3552f475f864837855af4c7674c34a1/artifacts
+end_time: 1737682834926
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b3552f475f864837855af4c7674c34a1
+run_name: smiling-robin-322
+run_uuid: b3552f475f864837855af4c7674c34a1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737682825236
+status: 4
+tags: []
+user_id: RameezRassdeen

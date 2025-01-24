@@ -40,6 +40,7 @@ list_of_files = [
     f"source/{PROJECT_NAME}/entity/__init__.py",
     f"source/{PROJECT_NAME}/entity/config_entity.py",
     f"source/{PROJECT_NAME}/constants/__init__.py",
+    f"source/{PROJECT_NAME}/logger.py",
     "config/config.yaml",
     "params.yaml",
     "schema.yaml",
@@ -53,6 +54,7 @@ list_of_files = [
     "tests/test_main.py",
     "tasks.py",
     ".coveragerc",
+    ".env",
 ]
 
 # Create directories and files if they do not exist

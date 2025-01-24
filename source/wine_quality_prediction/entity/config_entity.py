@@ -5,6 +5,7 @@ This module contains the configuration entity for data ingestion.
 # Importing required libraries
 from dataclasses import dataclass
 from pathlib import Path
+import os
 
 # Defining the DataIngestionConfig class for data ingestion configuration
 @dataclass(frozen=True)
